@@ -2,9 +2,8 @@ import express, { Application } from 'express';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
-import flickrRoutes from './routes/flickr.routes';
-import authRoutes from './routes/auth.routes';
-import indexRoutes from './routes/index.routes';
+import flickrRoutes from './routes/flickr.routes'
+import authRoutes from './routes/auth.routes'
 dotenv.config();
 
 const app: Application = express();
@@ -29,8 +28,6 @@ const options: cors.CorsOptions = {
  
 app.use(cors(options));
 
-/* app.use('/api', flickrRoutes);
-app.use('/api', authRoutes); */
-app.use('/api', indexRoutes);
+app.use('/api', authRoutes);
 
 export default app;
