@@ -2,7 +2,7 @@ import express, { Application } from 'express';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
-import indexRoutes from './routes/flickr.routes';
+import indexRoutes from './routes/index.routes';
 dotenv.config();
 
 const app: Application = express();

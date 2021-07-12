@@ -9,7 +9,8 @@ import axios from 'axios';
 //======================================
 export const getFlickrImages = async(req: Request, res: Response) => {
     try {
-        const response = await axios.post(`https://www.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=cats`);
+        console.log(req.query.tag)
+        const response = await axios.post(`https://www.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=${req.query.tag}`);
         const imageUrls : string[] = response.data.items.map((image: any) => image.link);
         return res.status(200).json({
             ok: true,
